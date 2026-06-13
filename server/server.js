@@ -7,9 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Test Route
-app.get("/", (req, res) => {
-    res.send("🚀 AI Resume Analyzer Backend is Running!");
+app.get("/api/message", (req, res) => {
+    res.json({
+        message: "Hello from Express Backend 🚀"
+    });
 });
 
 // Start Server
