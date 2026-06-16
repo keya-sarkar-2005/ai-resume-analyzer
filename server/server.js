@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const resumeRoutes = require("./routes/resumeRoutes");
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -18,6 +19,8 @@ mongoose
     .catch((err) => {
         console.log("❌ MongoDB Error:", err);
     });
+
+app.use("/api/resumes", resumeRoutes);
 
 // Test Route
 app.get("/api/message", (req, res) => {
